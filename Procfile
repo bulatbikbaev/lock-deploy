@@ -1,0 +1,1 @@
+web: gunicorn rentAccessHardware.wsgi --log-file -
