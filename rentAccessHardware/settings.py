@@ -12,20 +12,20 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-# import dj-database-url
-#
-# db_from_env = dj-database-url.config()
-# DATABASE['default'].update(db_from_env)
+import dj-database-url
+
+db_from_env = dj-database-url.config()
+DATABASE['default'].update(db_from_env)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = '5jdxi*rv^y3pi2m2ha#trq107x!$vt+qog39znf9*nl=+l!(%&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -50,6 +50,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,11 +97,11 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'web294',
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST", 'localhost'),
-        'PORT': os.environ.get("DB_PORT", '5432')
+        'NAME': 'd70ggmog8kv4ir',
+        'USER': 'cxtdhuqikyqrxh',
+        'PASSWORD': 'd08655a51bbc9003b9ae13494ce5baffc1c187e19089441ac90422bfa8a87df1',
+        'HOST': 'ec2-54-170-123-247.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
