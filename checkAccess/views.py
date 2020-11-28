@@ -16,7 +16,7 @@ char_denied = '*'
 """
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def check_access_by_card(request):
     """Checks, if card from request has privilege to open lock.
     Detailed description provided in API documentation.
@@ -47,7 +47,7 @@ def check_access_by_card(request):
     return Response(result_char, status=200)
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def check_access_by_code(request):
     """Checks, if code from request has privilege to open lock.
     Detailed description provided in API documentation.
