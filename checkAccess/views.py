@@ -62,7 +62,7 @@ def check_access_by_code(request):
     lock_id_hash: str = request.query_params.get('lock', None)
     hash_code: str = request.query_params.get('password', None)
     if not (lock_id_hash and hash_code):
-        return Response('Provide "lock" and "pass" query parameters',
+        return Response('Provide "lock" and "password" query parameters',
                         status=status.HTTP_400_BAD_REQUEST)
     now = datetime.utcnow()
     try:
