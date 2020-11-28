@@ -12,17 +12,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-# import dj-database-url
-#
-# db_from_env = dj-database-url.config()
-# DATABASE['default'].update(db_from_env)
-# DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
-import psycopg2
-import dj_database_url
 
-DATABASE_URL = os.environ['DATABASE_URL']
+# import psycopg2
+# import dj_database_url
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# DATABASE_URL = os.environ['DATABASE_URL']
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,4 +142,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
